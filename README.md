@@ -52,7 +52,7 @@ The datasets used in this project include:
 
 Organize MRI datasets as follows:
 
-- Each dataset should contain scans in patient scans in NIfTI format sorted by study.
+- Each dataset should contain patient scans in NIfTI format sorted by study.
 - Label study subfolders by diagnosis (e.g., 'control' for healthy, 'schiz' for diagnosed) for preprocessing.
 
 ### 1. Data Preprocessing
@@ -68,13 +68,13 @@ The Jupyter notebook and `schizophrenia_prediction_functions.py` script provide 
 - **Gender Distribution**: Relatively even distribution between control and diagnosed groups, similar sample size concerns limited further selection.
 - **Handedness**: Only right-handed patients where selected for training the model.
 
-### 2. Model Training
+### 3. Model Training
 
 The `Schizophrenia_Prediction_final.ipynb` notebook contains code for:
 - Model customization and hyperparameter adjustment.
 - Running model training.
 
-### 3. Evaluation
+### 4. Evaluation
 
 Evaluate model performance using metrics like accuracy, precision, and F1-score.
 
