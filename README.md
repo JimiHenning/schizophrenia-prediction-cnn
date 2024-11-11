@@ -116,9 +116,7 @@ The 3D CNN model processes 3D MRI volumes and includes convolutional layers for 
 
 Contributions are welcome to improve data handling, model architecture, or evaluation metrics. Open a pull request or create an issue for major changes.
 
-## License
-
-This project is licensed under the MIT License.
+## References
 
 FSL BET TOOL: 
 S.M. Smith. Fast robust automated brain extraction. Human Brain Mapping, 17(3):143-155, November 2002
