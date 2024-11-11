@@ -1,15 +1,13 @@
 
-# schizophrenia-prediction-cnn
+# SCHIZOPHRENIA PREDICTION USING A 3D CNN MODEL APPROACH
 
 ## Presentation:
 
 - [Presentation](https://docs.google.com/presentation/d/1WSHAT3Yc5fbAgA5XTn4BtV-cnNzOG3IDVC3L0c8aZhk/edit?usp=sharing)
 
-# SCHIZOPHRENIA PREDICTION USING A 3D CNN MODEL APPROACH
+## Project Overview
 
 This repository contains code and resources for preprocessing MRI scans from different studies and training a 3D CNN model to predict schizophrenia in patients. The project leverages MRI data from both diagnosed patients and healthy control patients, with a machine learning model trained on normalized images for improved accuracy.
-
-## Project Overview
 
 Schizophrenia is a complex mental health disorder with subtle but distinct structural brain changes detectable through MRI. This project automates the classification of patients as either diagnosed with schizophrenia or healthy based on MRI scans. The model development follows these primary steps:
 
