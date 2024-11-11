@@ -180,7 +180,6 @@ def move_files_to_parent_directory_2lvls(directory):
                         print(f"Error moving {current_path}: {e}")
 
 
-
 def move_files_from_deepest_subdirectories(directory, target_directory=None):
     """
     moves files from the deepest subfolder into the specified directory
