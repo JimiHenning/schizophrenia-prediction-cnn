@@ -43,6 +43,7 @@ The datasets used in this project include:
 
 [https://fcon_1000.projects.nitrc.org/indi/retro/cobre.html]  -> Needs NITRC Request and Approval
 [https://openneuro.org/datasets/ds005073/versions/1.0.0]
+[https://openneuro.org/datasets/ds003404/versions/1.0.3] -> The Control Group of Open Neuro ds005073
 [https://openneuro.org/datasets/ds004837/versions/1.0.0]
 [https://openneuro.org/datasets/ds004302/versions/1.0.1]
 [https://openneuro.org/datasets/ds004873/versions/2.0.3]
