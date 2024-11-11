@@ -48,73 +48,6 @@ The datasets used in this project include:
 [https://openneuro.org/datasets/ds004873/versions/2.0.3]
 
 
-## Data Overview and Handling
-We were given four separate datasets:
-- A dataset with general client information, including age, gender, account balance, and tenure.
-- A dataset detailing which client IDs belonged to either the test or control group.
-- A dataset containing all the logged online behavior of each client visit.
-
-### Data Cleaning
-We cleaned the dataset by:
-- Removing null values and duplicates.
-- Excluding client IDs that were not part of the experiment.
-- Recasting some data types.
-- Removing certain outliers for better visualization.
-
-We merged the data on client IDs, created a control and test dataframe for analysis, and later developed a comprehensive dataframe containing everything for use in Tableau.
-
-## Exploratory Data Analysis (EDA)
-- **Age Distribution**: We have a bimodal distribution, with most clients being either between 30-35 or 50-55 years old. The mean and median age are both around 47 years, indicating that most clients tend to be above middle age.
-- **Gender Distribution**: There is a relatively even gender distribution among male, female, and unknown, each comprising about a third of the clients.
-- **Tenure**: Most users tend to have been clients for around 6 years, with a tenure mean of 12 and a median of 11 years, indicating that over 50% are longstanding users with more than 11 years of tenure.
-- **Account Balance**: The account balance distribution is heavily positively skewed. After removing extreme outliers, the mean sits at 147,446 while the median is significantly lower at 63,334. Gender-wise, the distribution is relatively even, although extreme outliers belonged mostly to men. Individuals with unknown gender have a significantly lower mean and median.
-- **Longevity**: Men and women appear to be similarly longstanding customers, while those with unknown gender tend to be relatively new customers, likely because longstanding customers have more interactions with staff where their gender might be recorded.
-
-## KPI and Performance Metrics
-To evaluate the new design’s performance, we looked at three main KPIs:
-1. **Completion Rate**: Percentage of clients reaching “confirm” per visit.
-2. **Error Rate**: Each time a client took a step backward compared to the total number of actions.
-3. **Time Spent per Step**: The average time a client spent on each step.
-
-We also calculated the error ratio for each step to identify optimization opportunities.
-
-### Overall Performance
-- The new design performed better, especially in the key KPI of completion rate, with some caveats:
-  - The error rate in the new UI was overall slightly higher than in the old design.
-  - Step one of the new online process seems to have been a downgrade, with clients taking longer and making more errors compared to the classic interface.
-  
-When these flaws are addressed, the new UI could be a definitive improvement.
-
-## Hypothesis Testing
-- **Null Hypothesis (H0)**: The updated design did not improve the completion rate.
-- **Alternative Hypothesis (H1)**: The updated design led to a higher completion rate.
-- **Significance Level (α)**: 0.05
-
-Using a proportions z-test, we could reject the null hypothesis. The increase in completion rate exceeded the 5% threshold set by Vanguard, justifying the new design from a cost perspective.
-
-## Experiment Evaluation
-We evaluated the experiment for adequate size, structure, and randomization to identify any relevant biases:
-- Is the average age of clients engaging with the new process the same as those engaging with the old process?
-- Is the average client tenure (time with Vanguard) the same for clients engaging with the new process compared to the old process?
-- Are there gender differences affecting client engagement with the new or old process?
-
-Both samples were sufficiently large and similar (test group: 176,699 rows / control group: 140,536 rows), leading us to conclude that the timeframe for data gathering was adequate. 
-
-While the differences were statistically significant according to their p-values, the Cohen's values were small enough to suggest the differences are minimal in terms of effect size. In conclusion, the raw data between the control and test groups is overall randomly distributed with minimal bias.
-
-## Conclusion
-The new design is an overall success, particularly among older clients. Improvements should be made specifically to step 1. The experiment was well-structured and exhibited little bias, making the implementation cost-effective. 
-
-We recommend that Vanguard address these minor issues before proceeding with the full implementation of the new UI.
-
-
-
-
-
-
-
-
-
 ### Dataset Requirements
 
 Organize MRI datasets as follows:
@@ -129,9 +62,15 @@ The Jupyter notebook and `schizophrenia_prediction_functions.py` script provide 
 - **Data Loading**: Organize MRI data by patient and diagnosis.
 - **Data Preprocessing**: Normalize MRI scans, handle artifacts, and prepare data for training.
 
+
+## 2. Exploratory Data Analysis (EDA)
+- **Age Distribution**: For such a small sample size a relatively even age distribution between diagnosed and control group after removing all patients over 55 years of age to remove age-related atrophy as a confounding variable. Further selection would have reduced the sample size too much.
+- **Gender Distribution**: Relatively even distribution between control and diagnosed groups, similar sample size concerns limited further selection.
+- **Handedness**: Only right-handed patients where selected for training the model.
+
 ### 2. Model Training
 
-The `Schizophrenia_Prediction.ipynb` notebook contains code for:
+The `Schizophrenia_Prediction_final.ipynb` notebook contains code for:
 - Model customization and hyperparameter adjustment.
 - Running model training.
 
@@ -141,7 +80,7 @@ Evaluate model performance using metrics like accuracy, precision, and F1-score.
 
 ## Repository Files Overview
 
-### `notebooks/Schizophrenia_Prediction.ipynb`
+### `schizophrenia_prediction_final.ipynb`
 
 Guides through:
 - **Data Preprocessing & Visualization**
@@ -168,7 +107,8 @@ The 3D CNN model processes 3D MRI volumes and includes convolutional layers for 
 
 ## Future Improvements
 
-- Larger, more normalized dataset for better accuracy.
+- Significantly larger, more normalized dataset for better accuracy.
+- Leveraging more computational power for higher complexity models.
 - Use of transfer learning with pre-trained 3D CNNs.
 - Data augmentation for enhanced robustness.
 
@@ -190,4 +130,3 @@ Greve, D.N. and Fischl, B. Accurate and robust brain image alignment using bound
 
 ---
 
-This version is formatted for easier reading and better structure in Markdown files on GitHub or other markdown editors. Let me know if you'd like further customization!
